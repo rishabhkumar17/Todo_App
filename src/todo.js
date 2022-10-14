@@ -8,12 +8,6 @@ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp'
 import { pink } from '@mui/material/colors'
 
 export default function TodoListItem({ todo, inprogress, id, index, List }) {
-  //   const toggleInProgress = () => {
-  //     db.collection('todos').doc(id).update({
-  //       inprogress: !inprogress,
-  //     })
-  //   }
-
   const deleteTodo = () => {
     db.collection('todos').doc(id).delete()
   }
@@ -44,18 +38,7 @@ export default function TodoListItem({ todo, inprogress, id, index, List }) {
   }
   return (
     <div className="todoItem">
-      {/* <ListItem>
-        <ListItemText
-          primary={todo}
-          secondary={inprogress ? 'In Progress' : 'Completed'}
-        />
-      </ListItem> */}
-
       <p>{todo}</p>
-
-      {/* <Button onClick={toggleInProgress}>
-        {inprogress ? 'Done' : 'Undone'}
-      </Button> */}
       <div className="buttons">
         <Button onClick={upTodo}>
           <ArrowDropUpIcon
